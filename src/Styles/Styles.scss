@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Work+Sans&family=Roboto+Slab&display=swap");
+//Would create variables folder, will judge based on how many are added.
+$work-sans: "Work Sans", sans-serif;
+$roboto: "Roboto Slab", serif;
+$text-color: #292f33;
+
+@mixin skewed-underline {
+  content: "";
+  position: absolute;
+  left: 7%;
+  bottom: 0;
+  width: 75px;
+  height: 8px;
+  transform: skew(-12deg) translateX(-50%);
+  background: rgba(155, 221, 224, 0.5);
+  z-index: -1;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  color: $text-color;
+}
+.navbar {
+  display: block;
+  height: 5rem;
+  div {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img {
+    height: 80px;
+    width: 80px;
+  }
+  ul {
+    display: flex;
+    width: 8rem;
+    justify-content: space-between;
+    padding-inline-start: 0;
+    li {
+      text-decoration: none;
+      list-style-type: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.hero {
+  height: calc(100vh - 80px);
+  .container {
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .hero-main {
+      display: flex;
+      align-items: center;
+      .hero-text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        h1 {
+          font-family: $work-sans;
+          font-size: 6rem;
+          text-align: left;
+          width: 85%;
+          margin-bottom: 1rem;
+        }
+        span {
+          display: block;
+          font-size: 1.5rem;
+          text-align: left;
+          width: 85%;
+        }
+      }
+      .hero-image {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .hero-companies {
+      width: 60%;
+      margin: 2rem auto 1rem auto;
+      span {
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      div {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+.company-icon {
+  width: 20%;
+  height: 80px;
+  img {
+    max-width: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    cursor: pointer;
+  }
+  img:hover {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+}
+.video-section {
+  max-width: 1280px;
+  margin: 1rem auto;
+  display: flex;
+  .video {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      padding-left: 1rem;
+      font-family: $roboto;
+      position: relative;
+    }
+    h2::before {
+      @include skewed-underline;
+    }
+
+    .video-thumbnail-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      img {
+        max-width: 95%;
+        margin: 0 auto;
+        border-radius: 1rem;
+      }
+      .play-button-container {
+        position: absolute;
+        background-color: white;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        span {
+          display: block;
+          margin: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.process {
+  h3 {
+    font-size: 2rem;
+    font-family: $work-sans;
+    text-align: center;
+    margin: 8rem 0;
+  }
+  .process-cards {
+    width: 60%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    .process-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .process-icon {
+        text-align: center;
+      }
+      .process-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .title {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          font-weight: 600;
+          font-family: $roboto;
+          position: relative;
+        }
+        .title::before {
+          @include skewed-underline;
+          left: 50%;
+        }
+        .description {
+          font-size: 1.2rem;
+          padding: 0 2rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+.material-icons.md-60 {
+  font-size: 60px;
+}
+.material-icons.md-80 {
+  font-size: 80px;
+}
