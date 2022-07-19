@@ -9,17 +9,13 @@ View the latest startups with STAR potential. View, vet, and decide on who you b
 
 ## Future Releases
 
-- Would have liked to further develop filtering functionality.\
-  My current system would need some retooling, but I wanted to make sure the main filter worked.
+- Would have liked to further develop filtering functionality. My current system would need some retooling, but I wanted to make sure the main filter worked.
 
 ## Known Issues
 
-- Startup card ideas do not persist from home to liked page.\
-  This for that API does not seem to support a number of results parameter, and hitting the API on the page itself would have caused too many renders if done once per card.\
-  Decision was made to put the API request inside the Card to ensure each one was different.
+- Startup card ideas do not persist from home to liked page. This for that API does not seem to support a number of results parameter, and hitting the API on the page itself would have caused too many renders if done once per card. Decision was made to put the API request inside the Card to ensure each one was different.
 
-- Filter system is missing time and cost range. Ran into a number of issues with getting all parameters to work with eachother.\
-  Surely it can get done, would just need a block of focused time beyond the current constraints of the project.
+- Filter system is missing time and cost range. Ran into a number of issues with getting all parameters to work with eachother. Surely it can get done, would just need a block of focused time beyond the current constraints of the project.
 
 ## Available Scripts
 
