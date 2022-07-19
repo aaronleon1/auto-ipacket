@@ -3,7 +3,14 @@
 $work-sans: "Work Sans", sans-serif;
 $roboto: "Roboto Slab", serif;
 $text-color: #292f33;
-
+$text-color-secondary: #808080;
+$highlight: #ee850b;
+$like: #3d79ff;
+$like-hover: #3b82f6;
+$reject: #dc2626;
+$reject-hover: #ff3a2c;
+$footer-color: #262626;
+$text-white: #fff;
 @mixin skewed-underline {
   content: "";
   position: absolute;
@@ -21,10 +28,32 @@ $text-color: #292f33;
 body {
   color: $text-color;
 }
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+.material-icons.md-60 {
+  font-size: 60px;
+}
+.material-icons.md-80 {
+  font-size: 80px;
+}
+
+//Start of navbar styling
 .navbar {
   display: block;
   height: 5rem;
-  div {
+  box-shadow: 0 4px 6px -6px gray;
+  .navbar-logo {
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
@@ -35,25 +64,32 @@ body {
     height: 80px;
     width: 80px;
   }
-  ul {
+  .navbar-items {
     display: flex;
-    width: 8rem;
+    width: 10rem;
     justify-content: space-between;
     padding-inline-start: 0;
-    li {
+    .navbar-item {
       text-decoration: none;
       list-style-type: none;
+      font-weight: 600;
       a {
         text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
       }
     }
   }
 }
-
+//End of navbar styling
+//Start of hero styling
 .hero {
-  height: calc(100vh - 80px);
-  .container {
-    height: 100%;
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  .hero-container {
     max-width: 1280px;
     margin: 0 auto;
 
@@ -76,6 +112,7 @@ body {
           font-size: 1.5rem;
           text-align: left;
           width: 85%;
+          color: $text-color-secondary;
         }
       }
       .hero-image {
@@ -126,7 +163,7 @@ body {
 }
 .video-section {
   max-width: 1280px;
-  margin: 1rem auto;
+  margin: 8rem auto 1rem auto;
   display: flex;
   .video {
     width: 50%;
@@ -174,8 +211,11 @@ body {
     }
   }
 }
-
+//End of navbar styling
+//Start of process section styling
 .process {
+  max-width: 1280px;
+  margin: 1rem auto;
   h3 {
     font-size: 2rem;
     font-family: $work-sans;
@@ -183,8 +223,8 @@ body {
     margin: 8rem 0;
   }
   .process-cards {
-    width: 60%;
-    margin: 1rem auto;
+    width: 100%;
+    margin-bottom: 8rem;
     display: flex;
     justify-content: space-between;
     .process-card {
@@ -218,22 +258,279 @@ body {
     }
   }
 }
+//End of process section styling
+//Start of Startups section
+.startups {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 1rem auto;
+  justify-content: space-between;
+}
+//Separated from startups section to use same styles in likes section
+.startup-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 22%;
+  justify-content: start;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  .startup-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+    }
+  }
+  .name {
+    text-align: center;
+    font-style: $roboto;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0.3rem 0;
+  }
+  .phone {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: $text-color-secondary;
+  }
 
-.material-icons.md-18 {
-  font-size: 18px;
+  .email {
+    text-align: center;
+    font-size: 0.85rem;
+
+    font-weight: 500;
+    color: $text-color-secondary;
+  }
+  .startup-details {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    margin: 1rem auto;
+    .startup-time-container,
+    .startup-cost-container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .startup-cost,
+      .startup-time {
+        margin-bottom: 4px;
+        color: $highlight;
+        font-weight: 600;
+      }
+    }
+  }
+  .startup-information-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex-grow: 1;
+    .decision {
+      text-align: center;
+      margin-bottom: 1rem;
+
+      button {
+        padding: 1rem 6rem;
+        border-radius: 32px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .like {
+      background-color: $like;
+      background: $like;
+      color: white;
+    }
+    .like:hover {
+      background-color: $like-hover;
+      background: $like-hover;
+    }
+    .reject {
+      background-color: $reject;
+      background: $reject;
+      color: white;
+    }
+    .reject:hover {
+      background-color: $reject-hover;
+      background: $reject-hover;
+    }
+    .pitch {
+      text-align: center;
+      padding: 0 1.2rem;
+      margin-top: 1rem;
+      font-style: $roboto;
+      flex-grow: 1;
+    }
+  }
 }
-.material-icons.md-24 {
-  font-size: 24px;
+.startup-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 25%;
+  background: rgb(155, 221, 224);
+  background-color: rgb(155, 221, 224);
 }
-.material-icons.md-36 {
-  font-size: 36px;
+//End of Startups section styling
+//Start of Home CTA styling
+
+.call-to-action {
+  height: 100vh;
+  background-image: url("../../public/images/cta-bg.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .call-to-action-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    .call-to-action-header {
+      width: 50%;
+      margin-top: 2rem;
+      h4 {
+        font-size: 4rem;
+        margin-bottom: 4rem;
+        color: $text-white;
+      }
+      a {
+        font-size: 2rem;
+        background-color: $like;
+        background: $like;
+        padding: 1rem 4rem;
+        border-radius: 32px;
+        text-decoration: none;
+        color: $text-white;
+      }
+    }
+  }
 }
-.material-icons.md-48 {
-  font-size: 48px;
+//End of Home CTA styling
+//Start of Liked Page styling
+.liked {
+  .liked-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    .liked-header {
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    .liked-subheader {
+      color: $text-color-secondary;
+      font-weight: 500;
+      text-align: center;
+    }
+    .liked-sort {
+      margin: 4rem 0 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      .sort-by-select {
+        border: 1px solid black;
+        font-family: $roboto;
+        padding: 1rem 0.5rem 1rem 1rem;
+        font-size: 1.2rem;
+      }
+      .reject-all-button {
+        background-color: $reject;
+        color: $text-white;
+        border: none;
+        padding: 1rem 3rem;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+    .liked-startups-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 8rem;
+      .no-likes {
+        width: 100%;
+        margin: 3rem 0 20rem 0;
+        .no-likes-header {
+          text-align: center;
+          font-size: 3rem;
+        }
+        .no-likes-home {
+          display: block;
+          font-size: 2rem;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
-.material-icons.md-60 {
-  font-size: 60px;
+//End of Liked Page styling
+//Start of footer styling
+.footer {
+  background-color: $footer-color;
+  background: $footer-color;
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 0;
+    .footer-section-header {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: $text-white;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+    div {
+      .footer-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        .footer-list-item {
+          list-style-type: none;
+          color: $text-white;
+          margin-bottom: 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 1.5rem;
+        color: $text-white;
+        text-align: center;
+      }
+      div {
+        margin-top: 1rem;
+        input {
+          padding: 1rem 2rem;
+          border: none;
+        }
+        button {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border: none;
+          padding: 1rem 2rem;
+          cursor: pointer;
+          background-color: $highlight;
+          background: $highlight;
+          color: $text-white;
+        }
+      }
+    }
+  }
 }
-.material-icons.md-80 {
-  font-size: 80px;
-}
+//End of Footer styling

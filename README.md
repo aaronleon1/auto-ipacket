@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# STARtUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View the latest startups with STAR potential. View, vet, and decide on who you believe can make it to the next level.
+
+## Dependencies
+
+- Sass
+- React Router DOM
+
+## Future Releases
+
+- Would have liked to further develop filtering functionality.\
+  My current system would need some retooling, but I wanted to make sure the main filter worked.
+
+## Known Issues
+
+- Startup card ideas do not persist from home to liked page.\
+  This for that API does not seem to support a number of results parameter, and hitting the API on the page itself would have caused too many renders if done once per card.\
+  Decision was made to put the API request inside the Card to ensure each one was different.
+
+- Filter system is missing time and cost range. Ran into a number of issues with getting all parameters to work with eachother.\
+  Surely it can get done, would just need a block of focused time beyond the current constraints of the project.
 
 ## Available Scripts
 
@@ -38,33 +57,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

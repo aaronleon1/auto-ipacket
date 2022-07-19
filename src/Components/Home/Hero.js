@@ -4,7 +4,7 @@ import CompanyIcon from "./CompanyIcon";
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="container">
+      <div className="hero-container">
         <div className="hero-main">
           <div className="hero-text">
             <h1>The Next Generation has Arrived</h1>
